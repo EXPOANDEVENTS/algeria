@@ -1,0 +1,695 @@
+﻿<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: https://ogp.me/ns#">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+    
+    <link rel="profile" href="//gmpg.org/xfn/11">
+    <link rel="pingback" href="https://metalminingevent.com/xmlrpc.php">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<!-- Google Tag Manager by PYS -->
+<script type="rocketlazyloadscript" data-cfasync="false" data-pagespeed-no-defer>
+	var pys_datalayer_name = "dataLayer";
+	window.dataLayer = window.dataLayer || [];</script> 
+<!-- End Google Tag Manager by PYS --><link rel="alternate" href="https://metalminingevent.com/visiter/" hreflang="fr">
+<link rel="alternate" href="https://metalminingevent.com/en/visit/" hreflang="en">
+
+<!-- Optimisation des moteurs de recherche par Rank Math PRO - https://rankmath.com/ -->
+<title>Visiter - Metal Mining Event</title>
+<meta name="description" content="Le salon Metal Mining Event est le rendez-vous incontournable pour les professionnels du secteur métallurgique, des mines et de la transformation des métaux.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="https://metalminingevent.com/visiter/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visiter - Metal Mining Event">
+<meta property="og:description" content="Le salon Metal Mining Event est le rendez-vous incontournable pour les professionnels du secteur métallurgique, des mines et de la transformation des métaux.">
+<meta property="og:url" content="https://metalminingevent.com/visiter/">
+<meta property="og:site_name" content="Metal Mining Event">
+<meta property="og:updated_time" content="2024-12-06T10:49:39+00:00">
+<meta property="og:image" content="https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines.jpg">
+<meta property="og:image:secure_url" content="https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines.jpg">
+<meta property="og:image:width" content="964">
+<meta property="og:image:height" content="1444">
+<meta property="og:image:alt" content="exposer">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="article:published_time" content="2023-01-16T09:05:07+00:00">
+<meta property="article:modified_time" content="2024-12-06T10:49:39+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Visiter - Metal Mining Event">
+<meta name="twitter:description" content="Le salon Metal Mining Event est le rendez-vous incontournable pour les professionnels du secteur métallurgique, des mines et de la transformation des métaux.">
+<meta name="twitter:image" content="https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines.jpg">
+<meta name="twitter:label1" content="Temps de lecture">
+<meta name="twitter:data1" content="2 minutes">
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://metalminingevent.com/#organization","name":"Metal Mining Event","url":"https://metalminingevent.com","logo":{"@type":"ImageObject","@id":"https://metalminingevent.com/#logo","url":"https://metalminingevent.com/wp-content/uploads/2019/05/cropped-favicon_Plan-de-travail-1.png","contentUrl":"https://metalminingevent.com/wp-content/uploads/2019/05/cropped-favicon_Plan-de-travail-1.png","caption":"Metal Mining Event","inLanguage":"fr-FR","width":"512","height":"512"}},{"@type":"WebSite","@id":"https://metalminingevent.com/#website","url":"https://metalminingevent.com","name":"Metal Mining Event","publisher":{"@id":"https://metalminingevent.com/#organization"},"inLanguage":"fr-FR"},{"@type":"ImageObject","@id":"https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg","url":"https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg","width":"200","height":"200","inLanguage":"fr-FR"},{"@type":"WebPage","@id":"https://metalminingevent.com/visiter/#webpage","url":"https://metalminingevent.com/visiter/","name":"Visiter - Metal Mining Event","datePublished":"2023-01-16T09:05:07+00:00","dateModified":"2024-12-06T10:49:39+00:00","isPartOf":{"@id":"https://metalminingevent.com/#website"},"primaryImageOfPage":{"@id":"https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg"},"inLanguage":"fr-FR"},{"@type":"Person","@id":"https://metalminingevent.com/author/xmedia/","name":"xmedia","url":"https://metalminingevent.com/author/xmedia/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/633f812a9004770a7729b8f499d61033f6bc95f1a4766e517ead88631686c1d9?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/633f812a9004770a7729b8f499d61033f6bc95f1a4766e517ead88631686c1d9?s=96&amp;d=mm&amp;r=g","caption":"xmedia","inLanguage":"fr-FR"},"sameAs":["https://metalminingevent.com"],"worksFor":{"@id":"https://metalminingevent.com/#organization"}},{"@type":"Article","headline":"Visiter - Metal Mining Event","datePublished":"2023-01-16T09:05:07+00:00","dateModified":"2024-12-06T10:49:39+00:00","author":{"@id":"https://metalminingevent.com/author/xmedia/","name":"xmedia"},"publisher":{"@id":"https://metalminingevent.com/#organization"},"description":"Le salon Metal Mining Event est le rendez-vous incontournable pour les professionnels du secteur m\u00e9tallurgique, des mines et de la transformation des m\u00e9taux.","name":"Visiter - Metal Mining Event","@id":"https://metalminingevent.com/visiter/#richSnippet","isPartOf":{"@id":"https://metalminingevent.com/visiter/#webpage"},"image":{"@id":"https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg"},"inLanguage":"fr-FR","mainEntityOfPage":{"@id":"https://metalminingevent.com/visiter/#webpage"}}]}</script>
+<!-- /Extension Rank Math WordPress SEO -->
+
+<script type="rocketlazyloadscript" data-rocket-type='application/javascript' id='pys-version-script'>console.log('PixelYourSite Free version 10.0.3.1');</script>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<link rel="alternate" type="application/rss+xml" title="Metal Mining Event &raquo; Flux" href="https://metalminingevent.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Metal Mining Event &raquo; Flux des commentaires" href="https://metalminingevent.com/comments/feed/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://metalminingevent.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmetalminingevent.com%2Fvisiter%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://metalminingevent.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmetalminingevent.com%2Fvisiter%2F&#038;format=xml">
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='static/css/styles.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='woocommerce-layout-css' href='static/css/woocommerce-layout.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='woocommerce-smallscreen-css' href='static/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)'>
+<link data-minify="1" rel='stylesheet' id='woocommerce-general-css' href='static/css/woocommerce.css' type='text/css' media='all'>
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+/*# sourceURL=woocommerce-inline-inline-css */
+</style>
+<link rel='stylesheet' id='bootstrap-css' href='static/css/bootstrap.min.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='flaticon-css' href='static/css/flaticon.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='themify-icon-css' href='static/css/themify-icons.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='select2-css' href='static/css/select2.css' type='text/css' media='all'>
+<link rel='stylesheet' id='v4-shims-css' href='static/css/v4-shims.min.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='fontawesome-css' href='static/css/all.min-1761298061.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='elegant-font-css' href='static/css/el_style.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='lifevent-theme-css' href='static/css/theme.css' type='text/css' media='all'>
+<link rel='stylesheet' id='parent-style-css' href='static/css/style.css' type='text/css' media='all'>
+<link rel='stylesheet' id='lifevent-style-css' href='static/css/style1.css' type='text/css' media='all'>
+<style id='lifevent-style-inline-css' type='text/css'>
+
+body{
+	font-family: Archivo;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.2px;
+	color: #555555;
+}
+p{
+	color: #555555;
+	line-height: 28px;
+}
+
+h1,h2,h3,h4,h5,h6, .second_font {
+	font-family: Lora;
+	letter-spacing: 0px;
+}
+
+.woocommerce.single-product .product .cart .single_add_to_cart_button,
+.schedule a.active,
+.ova-form-mail-chimp .submit input[type=submit],
+.woocommerce-cart .woocommerce .woocommerce-cart-form .shop_table tbody tr td.actions .coupon button.button:hover
+{
+	background-color: #ff1493!important;
+	border-color: #ff1493;
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce.single-product .product .woocommerce-product-rating .star-rating span:before,
+.ova_lifevent_according_image .accor-lifevent-content-image .wp-content .sub-content .content .button-text,
+.blog_header .post-meta-content .post-author a:hover, .blog_header .post-meta-content .categories a:hover,
+.blog_header .link-all-blog:hover,
+.woocommerce.single-product .product .woocommerce-product-rating .star-rating span:before,
+.woocommerce.single-product .product .woocommerce-product-rating .star-rating span .rating:before,
+.woocommerce.single-product .product .woocommerce-product-rating .woocommerce-review-link:hover,
+.woocommerce.single-product .product .product_meta > span a:hover,
+.woocommerce.single-product .product .woo-thumbnails .owl-nav .owl-next.disabled,
+.woocommerce.single-product .product .woo-thumbnails .owl-nav .owl-prev.disabled,
+.woocommerce.single-product .product .woo-thumbnails .owl-nav .owl-next:hover, 
+.woocommerce.single-product .product .woo-thumbnails .owl-nav .owl-prev:hover,
+.woocommerce.single-product .product .woocommerce-tabs .woocommerce-Tabs-panel--reviews .woocommerce-Reviews #comments ol.commentlist li .comment_container .comment-text .star-rating span:before,
+.woocommerce.single-product .product .woocommerce-tabs .woocommerce-Tabs-panel--reviews .woocommerce-Reviews #review_form_wrapper .comment-form-rating .stars span a:before,
+.woocommerce.single-product .product .woocommerce-tabs .woocommerce-Tabs-panel--reviews .woocommerce-Reviews #review_form_wrapper .required,
+.woocommerce ul.products li.product h2.woocommerce-loop-product__title a:hover,
+.woocommerce .share_social .share-social-icons li:hover a,
+.woocommerce-cart .woocommerce .woocommerce-cart-form .shop_table tbody tr td.product-name a:hover,
+.woocommerce-checkout .checkout #customer_details .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .form-row label .required,
+.woo-wrapper .product_meta .posted_in a,
+.sidebar .widget .ova-recent-post-slide .list-recent-post .item-recent-post .content h2.title a:hover,
+.sidebar .widget.widget_categories ul li a:hover, 
+.sidebar .widget.widget_archive ul li a:hover, 
+.sidebar .widget.widget_meta ul li a:hover, 
+.sidebar .widget.widget_pages ul li a:hover, 
+.sidebar .widget.widget_nav_menu ul li a:hover,
+.sidebar .widget a:hover,
+.sidebar .widget.widget_calendar tbody tr td a,
+.sidebar .widget.widget_rss ul li a.rsswidget:hover,
+.sidebar .widget.widget_tag_cloud .tagcloud a:hover,
+article.post-wrap .post-content .post-meta .post-meta-content .post-author a:hover, 
+article.post-wrap .post-content .post-meta .post-meta-content .categories a:hover,
+article.post-wrap .post-content h2.post-title a:hover,
+.detail-blog-lifevent .socials .tags a:hover,
+.detail-blog-lifevent .socials .socials-inner .share-social .share-social-icons li a:hover,
+.content_comments .comments ul.commentlists li.comment .comment-body .ova_reply .comment-reply-link:hover,
+.content_comments .comments ul.commentlists li.comment .comment-body .ova_reply .comment-edit-link:hover,
+.content_comments .comments .comment-respond .comment-form .author label:after,
+.content_comments .comments .comment-respond .comment-form .email label:after,
+article.post-wrap .post-content .post-meta .post-meta-content span.right,
+article.post-wrap .post-content .post-meta .post-meta-content .post-author a,
+article.post-wrap .post-content .post-meta .post-meta-content .categories a,
+.blog_header .post-meta-content .post-author a,
+.blog_header .post-meta-content span.right,
+.blog_header .post-meta-content .categories a,
+.rpwwt-post-title,
+table tr td a,
+.ovatheme_header_default nav.navbar li a:hover,
+.sidebar .widget.widget_categories ul li:before, .sidebar .widget.widget_archive ul li:before, .sidebar .widget.widget_meta ul li:before, .sidebar .widget.widget_pages ul li:before, .sidebar .widget.widget_nav_menu ul li:before,
+.woocommerce-pagination ul.page-numbers li .page-numbers
+{
+	color: #ff1493;
+}
+
+.woocommerce.single-product .product .woocommerce-tabs ul.tabs li.active a:after,
+.woocommerce.single-product .product .woocommerce-tabs ul.tabs li a:after,
+.woocommerce.single-product .product .woocommerce-tabs .woocommerce-Tabs-panel--reviews .woocommerce-Reviews #review_form_wrapper .form-submit input#submit,
+.woocommerce ul.products li.product .add_to_cart_button,
+.woocommerce-cart .woocommerce .woocommerce-cart-form .shop_table tbody tr td.actions button.button,
+.woocommerce ul.products li.product .add_to_cart_button,
+.woocommerce-checkout .checkout #order_review .woocommerce-checkout-payment .place-order button.button,
+.woocommerce.single-product .product .cart .single_add_to_cart_button,
+.sidebar .widget .ova-recent-post-slide .list-recent-post .owl-dots .owl-dot.active,
+.sidebar .widget .ova-recent-post-slide .list-recent-post .owl-dots .owl-dot:hover,
+.woo-wrapper form.variations_form .single_add_to_cart_button,
+.woo-wrapper form.variations_form .single_add_to_cart_button.disabled,
+.content_comments .comments .comment-respond .comment-form p.form-submit input[type=submit]:hover,
+#scrollUp,
+.woocommerce.single-product .product .onsale,
+.woocommerce ul.products li.product .onsale
+{
+	background-color: #ff1493!important;
+}
+
+.sidebar .widget .ova-recent-post-slide .list-recent-post .owl-dots .owl-dot,
+.woocommerce-pagination ul.page-numbers li .page-numbers
+{
+	border-color: #ff1493;
+}
+
+/*# sourceURL=lifevent-style-inline-css */
+</style>
+<link rel='stylesheet' id='ova-google-fonts-css' href='static/css/css-Archivo100200300400500600700800900Lora100200300400500600700800900.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='recent-posts-widget-with-thumbnails-public-style-css' href='static/css/public.css' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-frontend-css' href='static/css/frontend.min-3.25.10.css' type='text/css' media='all'>
+<style id='elementor-frontend-inline-css' type='text/css'>
+.elementor-kit-9{--e-global-color-primary:#6EC1E4;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#61CE70;--e-global-typography-primary-font-family:"Roboto";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Roboto";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){margin-block-end:20px;}.elementor-element{--widgets-spacing:20px 20px;}{}h1.entry-title{display:var(--page-title-display);}.elementor-kit-9 e-page-transition{background-color:#FFBC7D;}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+.elementor-6295 .elementor-element.elementor-element-4cd20b1{text-align:left;}.elementor-6295 .elementor-element.elementor-element-5a213b3 .elementor-button-content-wrapper{flex-direction:row-reverse;}.elementor-6295 .elementor-element.elementor-element-574bb32 .elementor-cta__content-item{transition-duration:1000ms;}.elementor-6295 .elementor-element.elementor-element-574bb32.elementor-cta--sequenced-animation .elementor-cta__content-item:nth-child(2){transition-delay:calc( 1000ms / 3 );}.elementor-6295 .elementor-element.elementor-element-574bb32.elementor-cta--sequenced-animation .elementor-cta__content-item:nth-child(3){transition-delay:calc( ( 1000ms / 3 ) * 2 );}.elementor-6295 .elementor-element.elementor-element-574bb32.elementor-cta--sequenced-animation .elementor-cta__content-item:nth-child(4){transition-delay:calc( ( 1000ms / 3 ) * 3 );}.elementor-6295 .elementor-element.elementor-element-574bb32 .elementor-cta .elementor-cta__bg, .elementor-6295 .elementor-element.elementor-element-574bb32 .elementor-cta .elementor-cta__bg-overlay{transition-duration:1500ms;}.elementor-6295 .elementor-element.elementor-element-574bb32 .elementor-cta__content{text-align:center;}.elementor-6295 .elementor-element.elementor-element-438485f{text-align:left;}.elementor-6295 .elementor-element.elementor-element-665fae8 .elementor-button-content-wrapper{flex-direction:row-reverse;}.elementor-6295 .elementor-element.elementor-element-6f03584 > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute){margin-bottom:20px;}
+/*# sourceURL=elementor-frontend-inline-css */
+</style>
+<link data-minify="1" rel='stylesheet' id='style-elementor-css' href='static/css/style-elementor.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='static/css/elementor-icons.min.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='swiper-css' href='static/css/swiper.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='e-swiper-css' href='static/css/e-swiper.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-pro-css' href='static/css/frontend.min-3.23.3.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='font-awesome-5-all-css' href='static/css/all.min-1761298063.css' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='static/css/v4-shims.min-3.25.10.css' type='text/css' media='all'>
+<link rel='stylesheet' id='widget-image-css' href='static/css/widget-image.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='widget-heading-css' href='static/css/widget-heading.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='widget-text-editor-css' href='static/css/widget-text-editor.min.css' type='text/css' media='all'>
+<style id='themecomplete-extra-css-inline-css' type='text/css'>
+.woocommerce #content table.cart img.epo-upload-image, .woocommerce table.cart img.epo-upload-image, .woocommerce-page #content table.cart img.epo-upload-image, .woocommerce-page table.cart img.epo-upload-image, .epo-upload-image {max-width: calc(70% - 0.5em)  !important;max-height: none !important;}
+
+/*# sourceURL=themecomplete-extra-css-inline-css */
+</style>
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(static/image/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<link rel='stylesheet' id='google-fonts-1-css' href='static/css/css-Roboto100100italic200200italic300300italic400400italic500500italic600600italic700700italic800800italic900900italicRobotoSlab100100itac7e8212e28b1038d1ba5804c950d43ea.css.css' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='static/css/fontawesome.min.css' type='text/css' media='all'>
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='static/css/solid.min.css' type='text/css' media='all'>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.9.4.4" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"Voir le panier","cart_url":"https://metalminingevent.com/cart/","is_cart":"","cart_redirect_after_add":"no"};
+//# sourceURL=wc-add-to-cart-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.4.4" id="wc-add-to-cart-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.9.4.4" id="js-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%"};
+//# sourceURL=woocommerce-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.4.4" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/pixelyoursite/dist/scripts/jquery.bind-first-0.2.3.min.js?ver=6.9" id="jquery-bind-first-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/pixelyoursite/dist/scripts/js.cookie-2.1.3.min.js?ver=2.1.3" id="js-cookie-pys-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/pixelyoursite/dist/scripts/tld.min.js?ver=2.3.1" id="js-tld-js" defer></script>
+<script type="text/javascript" id="pys-js-extra">
+/* <![CDATA[ */
+var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"static","name":"PageView","pixelIds":["2351743271868921"],"eventID":"d46ef021-88d0-44b4-a1a3-aada13fa4fc4","params":{"page_title":"Visiter","post_type":"page","post_id":6295,"plugin":"PixelYourSite","user_role":"guest","event_url":"metalminingevent.com/visiter/"},"e_id":"init_event","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}]}},"dynamicEvents":[],"triggerEvents":[],"triggerEventTypes":[],"facebook":{"pixelIds":["2351743271868921"],"advancedMatching":[],"advancedMatchingEnabled":true,"removeMetadata":true,"contentParams":{"post_type":"page","post_id":6295,"content_name":"Visiter"},"commentEventEnabled":true,"wooVariableAsSimple":false,"downloadEnabled":true,"formEventEnabled":true,"serverApiEnabled":true,"wooCRSendFromServer":false,"send_external_id":null},"debug":"","siteUrl":"https://metalminingevent.com","ajaxUrl":"https://metalminingevent.com/wp-admin/admin-ajax.php","ajax_event":"8940007580","enable_remove_download_url_param":"1","cookie_duration":"7","last_visit_duration":"60","enable_success_send_form":"","ajaxForServerEvent":"1","ajaxForServerStaticEvent":"1","send_external_id":"1","external_id_expire":"180","track_cookie_for_subdomains":"1","google_consent_mode":"1","gdpr":{"ajax_enabled":false,"all_disabled_by_api":false,"facebook_disabled_by_api":false,"analytics_disabled_by_api":false,"google_ads_disabled_by_api":false,"pinterest_disabled_by_api":false,"bing_disabled_by_api":false,"externalID_disabled_by_api":false,"facebook_prior_consent_enabled":true,"analytics_prior_consent_enabled":true,"google_ads_prior_consent_enabled":null,"pinterest_prior_consent_enabled":true,"bing_prior_consent_enabled":true,"cookiebot_integration_enabled":false,"cookiebot_facebook_consent_category":"marketing","cookiebot_analytics_consent_category":"statistics","cookiebot_tiktok_consent_category":"marketing","cookiebot_google_ads_consent_category":null,"cookiebot_pinterest_consent_category":"marketing","cookiebot_bing_consent_category":"marketing","consent_magic_integration_enabled":false,"real_cookie_banner_integration_enabled":false,"cookie_notice_integration_enabled":false,"cookie_law_info_integration_enabled":false,"analytics_storage":{"enabled":true,"value":"granted","filter":false},"ad_storage":{"enabled":true,"value":"granted","filter":false},"ad_user_data":{"enabled":true,"value":"granted","filter":false},"ad_personalization":{"enabled":true,"value":"granted","filter":false}},"cookie":{"disabled_all_cookie":false,"disabled_start_session_cookie":false,"disabled_advanced_form_data_cookie":false,"disabled_landing_page_cookie":false,"disabled_first_visit_cookie":false,"disabled_trafficsource_cookie":false,"disabled_utmTerms_cookie":false,"disabled_utmId_cookie":false},"tracking_analytics":{"TrafficSource":"direct","TrafficLanding":"undefined","TrafficUtms":[],"TrafficUtmsId":[]},"GATags":{"ga_datalayer_type":"default","ga_datalayer_name":"dataLayerPYS"},"woo":{"enabled":true,"enabled_save_data_to_orders":true,"addToCartOnButtonEnabled":true,"addToCartOnButtonValueEnabled":true,"addToCartOnButtonValueOption":"price","singleProductId":null,"removeFromCartSelector":"form.woocommerce-cart-form .remove","addToCartCatchMethod":"add_cart_hook","is_order_received_page":false,"containOrderId":false},"edd":{"enabled":false},"cache_bypass":"1766816208"};
+//# sourceURL=pys-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/cache/min/1/wp-content/plugins/pixelyoursite/dist/scripts/public.js?ver=1761298063" id="pys-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.25.10" id="font-awesome-4-shim-js" defer></script>
+<link rel="https://api.w.org/" href="https://metalminingevent.com/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="https://metalminingevent.com/wp-json/wp/v2/pages/6295"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://metalminingevent.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9">
+<link rel='shortlink' href='https://metalminingevent.com/?p=6295'>
+	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<meta name="generator" content="Elementor 3.25.10; features: additional_custom_breakpoints, e_optimized_control_loading; settings: css_print_method-internal, google_font-enabled, font_display-auto">
+
+<!-- Meta Pixel Code -->
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js?v=next');
+</script>
+<!-- End Meta Pixel Code -->
+
+      <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+        var url = window.location.origin + '?ob=open-bridge';
+        fbq('set', 'openbridge', '2351743271868921', url);
+      </script>
+    <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>fbq('init', '2351743271868921', {}, {
+    "agent": "wordpress-6.9-4.0.1"
+})</script><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+    fbq('track', 'PageView', []);
+  </script>
+<!-- Meta Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx" src="https://www.facebook.com/tr?id=2351743271868921&ev=PageView&noscript=1">
+</noscript>
+<!-- End Meta Pixel Code -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">if (typeof ajaxurl === "undefined") {var ajaxurl = "https://metalminingevent.com/wp-admin/admin-ajax.php"}</script>			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<style class='wp-fonts-local' type='text/css'>
+@font-face{font-family:Inter;font-style:normal;font-weight:300 900;font-display:fallback;src:url('static/font/Inter-VariableFont_slnt,wght.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:Cardo;font-style:normal;font-weight:400;font-display:fallback;src:url('static/font/cardo_normal_400.woff2') format('woff2');}
+</style>
+<link rel="icon" href="https://metalminingevent.com/wp-content/uploads/2019/05/icon-1.png" sizes="32x32">
+<link rel="icon" href="https://metalminingevent.com/wp-content/uploads/2019/05/icon-1.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://metalminingevent.com/wp-content/uploads/2019/05/icon-1.png">
+<meta name="msapplication-TileImage" content="https://metalminingevent.com/wp-content/uploads/2019/05/icon-1.png">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><link data-minify="1" rel='stylesheet' id='wc-blocks-style-css' href='static/css/wc-blocks.css' type='text/css' media='all'>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--inter: "Inter", sans-serif;--wp--preset--font-family--cardo: Cardo;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+</head>
+
+<body class="wp-singular page-template-default page page-id-6295 wp-theme-lifevent wp-child-theme-lifevent-child theme-lifevent woocommerce-no-js elementor-default elementor-kit-9 elementor-page elementor-page-6295"><div class="ova-wrapp">
+	
+<style id="elementor-post-5940">.elementor-5940 .elementor-element.elementor-element-5a8825c1 > .elementor-container > .elementor-column > .elementor-widget-wrap{align-content:center;align-items:center;}.elementor-5940 .elementor-element.elementor-element-5a8825c1{box-shadow:0px 0px 5px 0px rgba(0,0,0,0.2);transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top:0px;margin-bottom:90px;z-index:9999;}.elementor-5940 .elementor-element.elementor-element-5a8825c1 > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-5940 .elementor-element.elementor-element-73b4701e .ova_logo img.desk-logo{height:45px;}.elementor-5940 .elementor-element.elementor-element-73b4701e .ova_logo img.mobile-logo{height:45px;}.elementor-5940 .elementor-element.elementor-element-73b4701e .ova_logo img.logo-fixed{height:45px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467{width:auto;max-width:auto;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu{flex-direction:row;justify-content:center;align-items:center;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu > li > a{padding:31px 0px 31px 0px;color:#343434;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu > li > a:hover{color:#ff1493;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu > li.active > a{color:#ff1493;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu > li.active > a.active_fixed{color:#ff1493;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav .dropdown-menu{min-width:225px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li a{padding:10px 15px 10px 15px;font-size:17px;font-weight:400;text-transform:none;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu{background-color:#ffffff;border-style:solid;border-width:1px 1px 1px 1px;border-color:#eeeeee;border-radius:0px 0px 0px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li > a{color:#343434;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li > a:hover{color:#ff1493;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li.active > a{color:#ff1493;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li{border-style:solid;border-width:0px 0px 1px 0px;border-color:#eeeeee;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li:last-child{border-style:solid;border-width:0px 0px 0px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .dropdown button.dropdown-toggle{margin:9px 0px 0px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav li a{border-style:solid;border-width:0px 0px 0px 0px;border-color:rgba(255,255,255,0.06);}.elementor-5940 .elementor-element.elementor-element-e8f7f91 .elementor-button{background-color:#A71917;font-size:15px;font-weight:400;fill:#ffffff;color:#ffffff;border-radius:5px 5px 5px 5px;padding:15px 20px 15px 20px;}.elementor-5940 .elementor-element.elementor-element-e8f7f91 .elementor-button:hover, .elementor-5940 .elementor-element.elementor-element-e8f7f91 .elementor-button:focus{background-color:#FB7270;color:#ffffff;}.elementor-5940 .elementor-element.elementor-element-e8f7f91{width:auto;max-width:auto;}.elementor-5940 .elementor-element.elementor-element-e8f7f91 > .elementor-widget-container{margin:0px 0px 0px 20px;}.elementor-5940 .elementor-element.elementor-element-e8f7f91 .elementor-button:hover svg, .elementor-5940 .elementor-element.elementor-element-e8f7f91 .elementor-button:focus svg{fill:#ffffff;}@media(max-width:1024px){.elementor-5940 .elementor-element.elementor-element-5a8825c1{padding:15px 10px 15px 10px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu > li > a{padding:10px 0px 10px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu{padding:0px 0px 0px 20px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li a{padding:10px 0px 10px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav li a{border-width:0px 0px 1px 0px;}}@media(max-width:767px){.elementor-5940 .elementor-element.elementor-element-5a8825c1{padding:10px 10px 10px 10px;}.elementor-5940 .elementor-element.elementor-element-52148de2{width:40%;}.elementor-5940 .elementor-element.elementor-element-4806f4f0{width:60%;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu > li > a{padding:10px 0px 10px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu{padding:0px 0px 0px 20px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav ul.menu .dropdown-menu li a{padding:10px 0px 10px 0px;}.elementor-5940 .elementor-element.elementor-element-6e3a4467 .ova_nav li a{border-width:0px 0px 1px 0px;}}@media(min-width:768px){.elementor-5940 .elementor-element.elementor-element-52148de2{width:20%;}.elementor-5940 .elementor-element.elementor-element-4806f4f0{width:80%;}}@media(max-width:1024px) and (min-width:768px){.elementor-5940 .elementor-element.elementor-element-52148de2{width:30%;}.elementor-5940 .elementor-element.elementor-element-4806f4f0{width:70%;}}</style>		<div data-elementor-type="wp-post" data-elementor-id="5940" class="elementor elementor-5940" data-elementor-post-type="ova_framework_hf_el">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-5a8825c1 elementor-section-content-middle ovamenu_shrink ovamenu_shrink_mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5a8825c1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-52148de2" data-id="52148de2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-73b4701e elementor-widget elementor-widget-ova_logo" data-id="73b4701e" data-element_type="widget" data-widget_type="ova_logo.default">
+				<div class="elementor-widget-container">
+			
+			<a class="ova_logo" href="index.html">
+				<img width="702" height="177" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20702%20177'%3E%3C/svg%3E" alt="Metal Mining Event" class="desk-logo d-none d-xl-block" data-lazy-src="https://metalminingevent.com/wp-content/uploads/2019/05/Logo_metal_steel_mining-1.png"><noscript><img width="702" height="177" src="static/picture/Logo_metal_steel_mining-1.png" alt="Metal Mining Event" class="desk-logo d-none d-xl-block"></noscript>
+				<img width="702" height="177" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20702%20177'%3E%3C/svg%3E" alt="Metal Mining Event" class="mobile-logo d-block d-xl-none" data-lazy-src="https://metalminingevent.com/wp-content/uploads/2019/05/Logo_metal_steel_mining-1.png"><noscript><img width="702" height="177" src="static/picture/Logo_metal_steel_mining-1.png" alt="Metal Mining Event" class="mobile-logo d-block d-xl-none"></noscript>
+
+				<img width="702" height="177" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20702%20177'%3E%3C/svg%3E" alt="Metal Mining Event" class="logo-fixed" data-lazy-src="https://metalminingevent.com/wp-content/uploads/2019/05/Logo_metal_steel_mining-1.png"><noscript><img width="702" height="177" src="static/picture/Logo_metal_steel_mining-1.png" alt="Metal Mining Event" class="logo-fixed"></noscript>
+			</a>
+
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4806f4f0 header_group" data-id="4806f4f0" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6e3a4467 elementor-view-primary-menu elementor-widget__width-auto elementor-widget elementor-widget-ova_menu" data-id="6e3a4467" data-element_type="widget" data-widget_type="ova_menu.default">
+				<div class="elementor-widget-container">
+					<div class="ova_menu_clasic">
+			<div class="ova_wrap_nav  NavBtn_left NavBtn_left">
+
+				<button class="ova_openNav" type="button">
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<div class="ova_nav canvas_left canvas_bg_gray">
+					<a href="javascript:void(0)" class="ova_closeNav"><i class="fas fa-times"></i></a>
+					<ul id="menu-primary-menu" class="menu sub_menu_dir_right"><li id="menu-item-5209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-5209"><a title="ACCUEIL" href="index.html">ACCUEIL</a></li>
+<li id="menu-item-6606" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6606"><a title="EXPOSER" href="exposer.html">EXPOSER</a></li>
+<li id="menu-item-6307" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6295 current_page_item menu-item-6307 active"><a title="VISITER" href="">VISITER</a></li>
+<li id="menu-item-5839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5839"><a title="CONTACT" href="contact.html">CONTACT</a></li>
+<li id="menu-item-7193" class="pll-parent-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7193 dropdown"><a title="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEVzldTg4ODS0tLxDwDtAwDjAADD0uz39/fy8vL3k4nzgna4yOixwuXu7u7s6+zn5+fyd2rvcGPtZljYAABrjNCpvOHrWkxegsqfs93NAADpUUFRd8THAABBa7wnVbERRKa8vLyxsLCoqKigoKClCvcsAAAAXklEQVR4AS3JxUEAQQAEwZo13Mk/R9w5/7UERJCIGIgj5qfRJZEpPyNfCgJTjMR1eRRnJiExFJz5Mf1PokWr/UztIjRGQ3V486u0HO55m634U6dMcf0RNPfkVCTvKjO16xHA8miowAAAAABJRU5ErkJggg==&quot; alt=&quot;&quot; width=&quot;16&quot; height=&quot;11&quot; style=&quot;width: 16px; height: 11px;&quot; /&gt;&lt;span style=&quot;margin-left:0.3em;&quot;&gt;Français&lt;/span&gt;" href="#pll_switcher"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2011'%3E%3C/svg%3E" alt="" width="16" height="11" style="width: 16px; height: 11px;" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEVzldTg4ODS0tLxDwDtAwDjAADD0uz39/fy8vL3k4nzgna4yOixwuXu7u7s6+zn5+fyd2rvcGPtZljYAABrjNCpvOHrWkxegsqfs93NAADpUUFRd8THAABBa7wnVbERRKa8vLyxsLCoqKigoKClCvcsAAAAXklEQVR4AS3JxUEAQQAEwZo13Mk/R9w5/7UERJCIGIgj5qfRJZEpPyNfCgJTjMR1eRRnJiExFJz5Mf1PokWr/UztIjRGQ3V486u0HO55m634U6dMcf0RNPfkVCTvKjO16xHA8miowAAAAABJRU5ErkJggg=="><noscript><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEVzldTg4ODS0tLxDwDtAwDjAADD0uz39/fy8vL3k4nzgna4yOixwuXu7u7s6+zn5+fyd2rvcGPtZljYAABrjNCpvOHrWkxegsqfs93NAADpUUFRd8THAABBa7wnVbERRKa8vLyxsLCoqKigoKClCvcsAAAAXklEQVR4AS3JxUEAQQAEwZo13Mk/R9w5/7UERJCIGIgj5qfRJZEpPyNfCgJTjMR1eRRnJiExFJz5Mf1PokWr/UztIjRGQ3V486u0HO55m634U6dMcf0RNPfkVCTvKjO16xHA8miowAAAAABJRU5ErkJggg==" alt="" width="16" height="11" style="width: 16px; height: 11px;"></noscript><span style="margin-left:0.3em;">Français</span><i class="arrow_carrot-down"></i></a><button type="button" class="dropdown-toggle"><i class="arrow_carrot-down"></i></button>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-7193-en" class="lang-item lang-item-44 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-7193-en"><a title="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=&quot; alt=&quot;&quot; width=&quot;16&quot; height=&quot;11&quot; style=&quot;width: 16px; height: 11px;&quot; /&gt;&lt;span style=&quot;margin-left:0.3em;&quot;&gt;English&lt;/span&gt;" href="visit.html" class="lang-item" hreflang="en-US" lang="en-US"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2011'%3E%3C/svg%3E" alt="" width="16" height="11" style="width: 16px; height: 11px;" data-lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII="><noscript><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="" width="16" height="11" style="width: 16px; height: 11px;"></noscript><span style="margin-left:0.3em;">English</span></a></li>
+</ul>
+</li>
+</ul>				</div>
+
+				<div class="ova_closeCanvas ova_closeNav"></div>
+			</div>
+		</div>
+
+		
+
+			</div>
+				</div>
+				<div class="elementor-element elementor-element-e8f7f91 elementor-widget__width-auto elementor-widget elementor-widget-button" data-id="e8f7f91" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://app.getsendmail.com/lists/6752cf177d28a/6283a903c4ffa/sign-up">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Réservez votre place</span>
+					</span>
+					</a>
+				</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+			<div class="wrap_site layout_1c">
+		<div id="main-content" class="main">
+			    <h1 class="page-title">
+    	Visiter    </h1>
+
+		<div data-elementor-type="wp-page" data-elementor-id="6295" class="elementor elementor-6295" data-elementor-post-type="page">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-360b9b7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="360b9b7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7251188" data-id="7251188" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-542d5f6 elementor-widget elementor-widget-image" data-id="542d5f6" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+													<img decoding="async" width="684" height="1024" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20684%201024'%3E%3C/svg%3E" class="attachment-large size-large wp-image-6311" alt="exposer" data-lazy-srcset="https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg 684w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-600x899.jpg 600w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-200x300.jpg 200w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-768x1150.jpg 768w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines.jpg 964w" data-lazy-sizes="(max-width: 684px) 100vw, 684px" data-lazy-src="https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg"><noscript><img loading="lazy" decoding="async" width="684" height="1024" src="static/picture/visiter-salon-metal-fer-mines-684x1024.jpg" class="attachment-large size-large wp-image-6311" alt="exposer" srcset="https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-684x1024.jpg 684w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-600x899.jpg 600w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-200x300.jpg 200w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines-768x1150.jpg 768w, https://metalminingevent.com/wp-content/uploads/2023/01/visiter-salon-metal-fer-mines.jpg 964w" sizes="(max-width: 684px) 100vw, 684px"></noscript>													</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-c0b1d47" data-id="c0b1d47" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4cd20b1 elementor-widget elementor-widget-heading" data-id="4cd20b1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Visiter MetalMining</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2e9342d elementor-widget elementor-widget-text-editor" data-id="2e9342d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Le salon Metal Mining Event est le rendez-vous incontournable pour les professionnels du secteur métallurgique, des mines et de la transformation des métaux. Ce salon rassemble les principaux acteurs de l&rsquo;industrie, offrant un lieu unique pour découvrir les dernières innovations, les tendances et les opportunités du marché.</p><p>Les visiteurs pourront découvrir les dernières avancées technologiques dans les domaines de l&rsquo;extraction et de la transformation des métaux, ainsi que les nouveaux équipements et les techniques d&rsquo;exploitation minière. Les conférences et les ateliers organisés pendant le salon permettront aux visiteurs de se tenir informés des dernières tendances et de découvrir les dernières technologies.</p><p>Ce salon est également l&rsquo;occasion idéale pour les professionnels de l&rsquo;industrie métallurgique et minière de se connecter, de réseauter et de découvrir de nouvelles opportunités commerciales. Si vous êtes impliqué dans l&rsquo;industrie métallurgique, minière, de la transformation des métaux, ne manquez pas l&rsquo;occasion de visiter le salon Metal Mining Event et de découvrir tout ce qu&rsquo;il a à offrir.</p><p>Vous pourrez vous inscrire dès maintenant et vous assurer d&rsquo;avoir une place à ce rendez-vous incontournable pour les professionnels du secteur métallurgique, des mines et de la transformation des métaux. Nous vous attendons nombreux pour cette prochaine édition !</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-5a213b3 elementor-button-info elementor-widget elementor-widget-button" data-id="5a213b3" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://app.getsendmail.com/lists/6752cf177d28a/6283a903c4ffa/sign-up" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon">
+				<i aria-hidden="true" class="fas fa-angle-right"></i>			</span>
+									<span class="elementor-button-text">INSCRIPTION</span>
+					</span>
+					</a>
+				</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-8bd0351 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8bd0351" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-649ebc6" data-id="649ebc6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-574bb32 elementor-cta--skin-cover elementor-animated-content elementor-bg-transform elementor-bg-transform-zoom-in elementor-widget elementor-widget-call-to-action" data-id="574bb32" data-element_type="widget" data-widget_type="call-to-action.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-cta">
+					<div class="elementor-cta__bg-wrapper">
+				<div data-bg="https://metalminingevent.com/wp-content/uploads/2023/01/exposer-au-salon-1-1024x536.jpg" class="elementor-cta__bg elementor-bg rocket-lazyload" style="" role="img" aria-label="exposer au salon"></div>
+				<div class="elementor-cta__bg-overlay"></div>
+			</div>
+							<div class="elementor-cta__content">
+				
+									<h2 class="elementor-cta__title elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
+						Exposer au Salon					</h2>
+				
+									<div class="elementor-cta__description elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
+						Rejoignez les leaders de l'industrie métallurgique, minière et de la transformation des métaux en exposant au salon Metal Mining Event.					</div>
+				
+									<div class="elementor-cta__button-wrapper elementor-cta__content-item elementor-content-item elementor-animated-item--grow">
+					<a class="elementor-cta__button elementor-button elementor-size-" href="exposer.html">
+						EXPOSER					</a>
+					</div>
+							</div>
+						</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-bf9b7ee elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="bf9b7ee" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-cccb7a4" data-id="cccb7a4" data-element_type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+				<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-4b0c3dc" data-id="4b0c3dc" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-438485f elementor-widget elementor-widget-heading" data-id="438485f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Choisissez votre Ticket</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-798a75c elementor-widget elementor-widget-text-editor" data-id="798a75c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Bienvenue au salon Metal Mining Event, le rendez-vous incontournable pour les professionnels du secteur métallurgique, des mines et de la transformation des métaux. Notre salon réunit les principaux acteurs de l&rsquo;industrie, offrant une plateforme unique pour découvrir les dernières innovations, les tendances et les opportunités du marché.</p><p>Choisissez parmi nos trois types de tickets pour profiter pleinement de l&rsquo;événement :</p><ol><li><p>Le Ticket Gratuit : Accédez à notre salon pendant toute sa durée et découvrez les dernières avancées technologiques dans les domaines de l&rsquo;extraction et de la transformation des métaux. Participez aux conférences captivantes et aux ateliers informatifs pour rester informé des dernières tendances et des nouvelles technologies.</p></li></ol><p>Ne manquez pas cette occasion de vous connecter, de réseauter et de découvrir de nouvelles opportunités commerciales dans l&rsquo;industrie métallurgique, minière et de la transformation des métaux. Inscrivez-vous dès maintenant et assurez-vous d&rsquo;obtenir votre place à cet événement incontournable. Nous avons hâte de vous accueillir lors de notre prochaine édition !</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-665fae8 elementor-button-info elementor-align-center elementor-widget elementor-widget-button" data-id="665fae8" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-lg" href="https://app.getsendmail.com/lists/6752cf177d28a/6283a903c4ffa/sign-up" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon">
+				<i aria-hidden="true" class="fas fa-angle-right"></i>			</span>
+									<span class="elementor-button-text">INSCRIPTION</span>
+					</span>
+					</a>
+				</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-6f03584" data-id="6f03584" data-element_type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		<div class="page-links">
+	
+</div>	
+		</div> <!-- #main-content -->
+			</div> <!-- .wrap_site -->
+
+						
+		</div> <!-- Ova Wrapper -->	
+		<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/lifevent-child/*","/wp-content/themes/lifevent/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <!-- Meta Pixel Event Code -->
+    <script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+    <!-- End Meta Pixel Event Code -->
+    <div id='fb-pxl-ajax-code'></div><div id='pys_ajax_events'></div>        <script type="rocketlazyloadscript">
+            var node = document.getElementsByClassName('woocommerce-message')[0];
+            if(node && document.getElementById('pys_late_event')) {
+                var messageText = node.textContent.trim();
+                if(!messageText) {
+                    node.style.display = 'none';
+                }
+            }
+        </script>
+        			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=2351743271868921&ev=PageView&noscript=1&cd%5Bpage_title%5D=Visiter&cd%5Bpost_type%5D=page&cd%5Bpost_id%5D=6295&cd%5Bplugin%5D=PixelYourSite&cd%5Buser_role%5D=guest&cd%5Bevent_url%5D=metalminingevent.com%2Fvisiter%2F" alt=""></noscript>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=fr; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1761298063" id="swv-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="contact-form-7-js-translations">
+/* <![CDATA[ */
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2024-10-17 17:27:10+0000","generator":"GlotPress\/4.0.1","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n > 1;","lang":"fr"},"This contact form is placed in the wrong place.":["Ce formulaire de contact est plac\u00e9 dans un mauvais endroit."],"Error:":["Erreur\u00a0:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+//# sourceURL=contact-form-7-js-translations
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/metalminingevent.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1761298063" id="contact-form-7-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/checkout/??(.*)|/cart/?|/my-account/??(.*)|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://metalminingevent.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/themes/lifevent/assets/libs/bootstrap/js/bootstrap.bundle.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js?ver=4.0.3-wc.9.4.4" id="select2-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/cache/min/1/wp-content/themes/lifevent/assets/js/script.js?ver=1761298063" id="lifevent-script-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=9.4.4" id="sourcebuster-js-js" defer></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"https://metalminingevent.com/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+//# sourceURL=wc-order-attribution-js-extra
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=9.4.4" id="wc-order-attribution-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.google.com/recaptcha/api.js?render=6LfQKl0oAAAAAKq3jEJub7efBhKHlx3KoLn0CKjV&amp;ver=3.0" id="google-recaptcha-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wpcf7-recaptcha-js-before">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {
+    "sitekey": "6LfQKl0oAAAAAKq3jEJub7efBhKHlx3KoLn0CKjV",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1761298063" id="wpcf7-recaptcha-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/cache/min/1/wp-content/plugins/ova-framework/assets/js/script-elementor.js?ver=1761298064" id="script-elementor-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.23.3" id="elementor-pro-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.25.10" id="elementor-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.25.10" id="elementor-frontend-modules-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="elementor-pro-frontend-js-before">
+/* <![CDATA[ */
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/metalminingevent.com\/wp-admin\/admin-ajax.php","nonce":"ef281f50c8","urls":{"assets":"https:\/\/metalminingevent.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/metalminingevent.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"woocommerce":{"menu_cart":{"cart_page_url":"https:\/\/metalminingevent.com\/cart\/","checkout_page_url":"https:\/\/metalminingevent.com\/checkout\/","fragments_nonce":"9a8cdc26f6"}},"facebook_sdk":{"lang":"fr_FR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/metalminingevent.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.23.3" id="elementor-pro-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Partager sur Facebook","shareOnTwitter":"Partager sur Twitter","pinIt":"L\u2019\u00e9pingler","download":"T\u00e9l\u00e9charger","downloadImage":"T\u00e9l\u00e9charger une image","fullscreen":"Plein \u00e9cran","zoom":"Zoom","share":"Partager","playVideo":"Lire la vid\u00e9o","previous":"Pr\u00e9c\u00e9dent","next":"Suivant","close":"Fermer","a11yCarouselWrapperAriaLabel":"Carousel | Scroll horizontal: Fl\u00e8che gauche & droite","a11yCarouselPrevSlideMessage":"Diapositive pr\u00e9c\u00e9dente","a11yCarouselNextSlideMessage":"Diapositive suivante","a11yCarouselFirstSlideMessage":"Ceci est la premi\u00e8re diapositive","a11yCarouselLastSlideMessage":"Ceci est la derni\u00e8re diapositive","a11yCarouselPaginationBulletMessage":"Aller \u00e0 la diapositive"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Portrait mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Paysage","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablette en mode portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablette en mode paysage","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Portable","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"\u00c9cran large","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.25.10","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"e_swiper_latest":true,"e_nested_atomic_repeaters":true,"e_optimized_control_loading":true,"e_onboarding":true,"e_css_smooth_scroll":true,"theme_builder_v2":true,"home_screen":true,"landing-pages":true,"nested-elements":true,"editor_v2":true,"link-in-bio":true,"floating-buttons":true,"display-conditions":true,"form-submissions":true,"taxonomy-filter":true},"urls":{"assets":"https:\/\/metalminingevent.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/metalminingevent.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/metalminingevent.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"56e591412c"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","woocommerce_notices_elements":[]},"post":{"id":6295,"title":"Visiter%20-%20Metal%20Mining%20Event","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.25.10" id="elementor-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://metalminingevent.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.23.3" id="pro-elements-handlers-js" defer></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://metalminingevent.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://metalminingevent.com/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="static/js/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>	<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body><!-- /body -->
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1766816208 -->
